@@ -36,6 +36,7 @@ public class ApplicationContextExtendsFindTest {
     void findBeanBySubType() {
         RateDiscountPolicy rateDiscountPolicy = ac.getBean(RateDiscountPolicy.class);
         Assertions.assertThat(rateDiscountPolicy).isInstanceOf(RateDiscountPolicy.class);
+
     }
 
     @Test
@@ -44,6 +45,7 @@ public class ApplicationContextExtendsFindTest {
         Map<String, DiscountPolicy> beansOfType = ac.getBeansOfType(DiscountPolicy.class);
         Assertions.assertThat(beansOfType.size()).isEqualTo(2);
     }
+
 
     @Test
     @DisplayName("부모 타입으로 모두 조회하기(Object)")
